@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Functions - Documentation Programming Quotes efrei-team</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Functions";
+        var mkdocs_page_input_path = "functions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Documentation Programming Quotes efrei-team
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">User's Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../features/features/">Features</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../features/functions/">Core Functions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../features/user-interface/">User Interface</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Logs</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../logs/log-initiateur/">Initiateur</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../logs/log-contributeur-1.md">Contributeur 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../logs/log-contributeur-2.md">Contributeur 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../logs/log-contributeur-3.md">Contributeur 3</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Documentation Programming Quotes efrei-team</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Functions</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="core-functions">Core functions</h2>
+<h3 id="file-functionspy">File <code>functions.py</code></h3>
+<h4 id="load_quotesfilename"><code>load_quotes(filename)</code></h4>
+<p>```python
+def load_quotes(filename):
+    """
+    Loads quotes from a file and returns them as a list.
+    Parameters:
+    filename (str): The path to the file containing quotes.
+    The function reads the file line by line, strips whitespace, and appends
+    non-empty lines to a list. Each line in the file should contain one quote.
+    Returns:
+    list: A list of quotes loaded from the file.
+    Example:
+    load_quotes('quotes.txt')
+    This function reads the file 'quotes.txt' and returns a list of quotes.
+    """
+    quotes = []
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+    for line in lines:
+        line = line.strip()
+        if line:
+            quotes.append(line)
+    return quotes</p>
+<p>def random_quote(quotes):
+    """
+    Returns a random quote from the provided list of quotes.
+    Parameters:
+    quotes (list): A list of quotes from which a random quote will be selected.
+    The function uses the random.choice() method to select a random quote.
+    Returns:
+    str: A randomly selected quote from the list.
+    Example:
+    random_quote(['Quote 1', 'Quote 2', 'Quote 3'])
+    This function returns a random quote from the provided list.
+    """<br />
+    random_quote = random.choice(quotes)
+    return random_quote</p>
+<p>def print_quote(quote):
+    """
+    Prints a single quote to the console.
+    Parameters:
+    quote (str): The quote to be printed.
+    The function formats the quote with asterisks and prints it to the console.
+    Returns:
+    None
+    Example:
+    print_quote('This is a quote.')
+    """
+print(quote)</p>
+<p>def view_quotes(quotes):
+    """
+    Prints all quotes in the provided list to the console.
+    Parameters:
+    quotes (list): A list of quotes to be printed.<br />
+    The function iterates through the list and prints each quote using the
+    Returns:
+    None
+    Example:
+    view_quotes(['Quote 1', 'Quote 2', 'Quote 3'])
+    This function prints each quote in the provided list.
+    """
+    for quote in quotes:
+        print_quote(quote)</p>
+<p>def add_quote(quotes, filename):
+    """
+    Adds a new quote to the list of quotes and appends it to a file.
+    Parameters:
+    quotes (list): A list of existing quotes to which the new quote will be added.
+    filename (str): The path to the file where the new quote will be appended.
+    The function prompts the user to input a new quote, appends it to the provided
+    list of quotes, and writes it to the specified file. Each quote is written on
+    a new line in the file.
+    Returns:
+    None
+    Example:
+    add_quote(['Quote 1', 'Quote 2'], 'quotes.txt')
+    """
+    new_quote = input("Enter a new quote: ")
+    quotes.append(new_quote)
+    with open(filename, 'a') as file:
+        file.write(new_quote)
+        file.write('\n')
+    print("Quote added successfully!")</p>
+<p>def display_quotes(quotes, count):
+    """
+    Displays a specified number of quotes from the provided list.
+    Parameters:
+    quotes (list): A list of quotes to be displayed.
+    count (int): The number of quotes to display. If count is greater than the
+    length of the list, all quotes will be displayed.
+    The function checks if the count is valid and prints the specified number
+    of quotes. If the count exceeds the number of available quotes, it prints
+    all quotes.
+    Returns:
+    None
+    Example:
+    display_quotes(['Quote 1', 'Quote 2', 'Quote 3'], 2)
+    This function prints the first 2 quotes from the provided list.
+    """
+    if count &gt;= len(quotes):
+        print("All Quotes:")
+        view_quotes(quotes)
+    else:
+        print(f"First {count} Quotes:")
+        for i in range(count):
+            print_quote(quotes[i])</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
